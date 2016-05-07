@@ -20,9 +20,13 @@ class CreateEducationalBackgroundsTable extends Migration
             $table->datetime('start');
             $table->datetime('end');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
             $table->integer('education_id')->unsigned();
-            $table->foreign('education_id')->references('id')->on('educations');
+            $table->foreign('education_id')->references('id')->on('educations')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

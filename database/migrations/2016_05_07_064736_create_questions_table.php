@@ -17,7 +17,9 @@ class CreatequestionsTable extends Migration
             $table->increments('id');
             $table->text('description');
             $table->integer('job_id')->unsigned();
-            $table->foreign('job_id')->references('id')->on('jobs');
+            $table->foreign('job_id')->references('id')->on('jobs')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

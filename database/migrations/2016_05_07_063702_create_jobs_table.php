@@ -16,45 +16,63 @@ class CreatejobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('currency_id')->unsigned();
-            $table->foreign('currency_id')->references('id')->on('currencies');
+            $table->foreign('currency_id')->references('id')->on('currencies')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->string('name');
 
             $table->integer('location_id')->unsigned();
-            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('location_id')->references('id')->on('locations')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->string('state');
             $table->string('city');
             $table->string('zip_code');
 
             $table->integer('type_id')->unsigned();
-            $table->foreign('type_id')->references('id')->on('types');
+            $table->foreign('type_id')->references('id')->on('types')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->text('brief_description');
 
             $table->integer('employment_type_id')->unsigned();
-            $table->foreign('employment_type_id')->references('id')->on('employment_types');
+            $table->foreign('employment_type_id')->references('id')->on('employment_types')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->text('job_requirement');
             $table->text('benefit');
 
             $table->integer('industry_id')->unsigned();
-            $table->foreign('industry_id')->references('id')->on('industries');
+            $table->foreign('industry_id')->references('id')->on('industries')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->integer('experience_level_id')->unsigned();
-            $table->foreign('experience_level_id')->references('id')->on('experience_levels');
+            $table->foreign('experience_level_id')->references('id')->on('experience_levels')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->integer('min_salary');
             $table->integer('max_salary')->nullable();
 
             $table->integer('functional_id')->unsigned();
-            $table->foreign('functional_id')->references('id')->on('functionals');
+            $table->foreign('functional_id')->references('id')->on('functionals')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->integer('education_id')->unsigned();
-            $table->foreign('education_id')->references('id')->on('educations');
+            $table->foreign('education_id')->references('id')->on('educations')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
             $table->string('keyword');
             $table->timestamps();

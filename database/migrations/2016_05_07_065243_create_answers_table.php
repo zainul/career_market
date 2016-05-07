@@ -18,7 +18,9 @@ class CreateanswersTable extends Migration
             $table->integer('applicant_id')->unsigned();
             $table->foreign('applicant_id')->references('id')->on('applicants');
             $table->integer('question_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->foreign('question_id')->references('id')->on('questions')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
             $table->text('answer');
             $table->timestamps();
             $table->softDeletes();

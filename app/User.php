@@ -36,7 +36,7 @@ class User extends Authenticatable
       return $this->hasMany('App\Models\EducationalBackground');
     }
 
-    public function work_experiences() {
+    public function profiles() {
       return $this->hasOne('App\Models\Profile');
     }
 }
