@@ -9,7 +9,7 @@ use App\Models\Industry;
 use App\Models\ExperienceLevel;
 use App\Models\Functional;
 use App\Models\Education;
-
+use App\Models\Job;
 use Response;
 
 class AppBaseController extends Controller
@@ -44,5 +44,9 @@ class AppBaseController extends Controller
 
   protected function education() {
     return Education::all();
+  }
+
+  protected function job() {
+    return Job::where('company_id', \Auth::user()->company()[0]->id)->get();
   }
 }

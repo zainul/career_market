@@ -25,9 +25,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['middleware' => ['web','auth'] ], function () {
   Route::auth();
 
   Route::resource('jobs', 'JobController');
   Route::get('/home', 'HomeController@index');
+  Route::resource('questions', 'QuestionController');
 });

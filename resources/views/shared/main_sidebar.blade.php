@@ -20,6 +20,9 @@
         <a href="/jobs">
           <i class="fa fa-plus"></i> <span>Jobs</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
+        <a href="/questions">
+          <i class="fa fa-question"></i> <span>Question</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
       </li>
         <li class="treeview">
           <a href="{{ url('/logout') }}">
