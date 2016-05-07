@@ -12,7 +12,7 @@
     </aside>
 
     <div class="content-wrapper">
-      <div>
+      <div class="container">
         <br/>
 
         @include('shared.alert_section')
@@ -20,14 +20,7 @@
 
       </div>
     </div>
-
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Version</b> 1.0
-      </div>
-      <strong><a href="#">By Zainul</a></strong>
-    </footer>
-
+    
     @include('shared.control_sidebar')
 
     <div class='control-sidebar-bg'></div>

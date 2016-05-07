@@ -34,9 +34,7 @@
     $('.datepicker').datepicker({
       format:'yyyy-mm-dd'
     });
-    
-    $('select').select2({
-      placeholder: "Please Select"
-    });
+
+    $('.editor-content').wysihtml5();
   })
 </script>

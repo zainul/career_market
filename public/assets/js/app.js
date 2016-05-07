@@ -1,2 +1,3 @@
 $(function() {
+  $('.jobs-table').DataTable();
 });

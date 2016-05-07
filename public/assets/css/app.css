@@ -7,6 +7,15 @@
     background-color: #F9F9F9;
     z-index: 800;
 }
+
+.section {
+  padding: 15px;
+  border: 1px solid #79B3EF;
+  background: #FFF;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
 .main-footer {
     background: #fff;
     padding: 4px;
@@ -49,7 +58,9 @@
 }
 
 .container{
-max-width: 1096px !important;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1096px !important;
 }
 
 img.large {
@@ -145,20 +156,6 @@ img.banner {
     margin-left: 0 !important;
   }
 
-  #managements-table_wrapper .col-md-6{
-    width: 50%;
-  }
-
-  .show-managements,
-  .show-news,
-  .show-catalog,
-  .show-events,
-  .show-albums,
-  .show-membership-request-by-club-id,
-  .show-member-role-by-club-id{
-    margin-left: 10px;
-  }
-
   .thumbnail-wrap{
     height: auto;
   }
@@ -176,17 +173,6 @@ img.banner {
 
   .act-wrap .col-md-2 {
     width: 100%;
-  }
-
-  #catalog-table_wrapper,
-  #pending-membership-request-table_wrapper,
-  #member-role-table_wrapper,
-  #announcements-table,
-  #users-table_wrapper{
-    width: 100% !important;
-    overflow: auto;
-    margin-bottom: 20px !important;
-    padding-bottom: 10px;
   }
 
   .content-wrapper h1{
