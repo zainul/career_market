@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
     {
       Model::unguard();
       $this->call( 'RoleTableSeeder' );
-      factory('App\User', 1)->create();
       factory('App\Models\Company', 10)->create();
+      factory('App\User', 1)->create();
       Model::reguard();
     }
 }

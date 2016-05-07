@@ -8,6 +8,7 @@ $factory->define(App\User::class, function ($faker) {
     'firstname' => 'masadi',
     'phone' => '081333241990',
     'email' => 'zainul@career.com',
-    'password' => bcrypt('12345678')
+    'password' => bcrypt('12345678'),
+    'role_id' => 1
   ];
 });
