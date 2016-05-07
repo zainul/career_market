@@ -37,7 +37,8 @@ class Job extends Model
         'max_salary',
         'functional_id',
         'education_id',
-        'keyword'
+        'keyword',
+        'company_id'
     ];
 
     /**
@@ -103,7 +104,11 @@ class Job extends Model
       return $this->belongsTo('App\Models\Functional');
     }
 
-    public function Education() {
+    public function education() {
       return $this->belongsTo('App\Models\Education');
+    }
+
+    public function company() {
+      return $this->belongsTo('App\Models\Company');
     }
 }

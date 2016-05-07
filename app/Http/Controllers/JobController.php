@@ -50,7 +50,11 @@ class JobController extends AppBaseController
      */
     public function store()
     {
-        Job::create(Request::all());
+        $data = Request::all();
+
+        $data['company_id'] = \Auth::user()->company()[0]->id;
+
+        Job::create($data);
 
         \Session::flash('success','Job saved successfully.');
 
@@ -123,7 +127,11 @@ class JobController extends AppBaseController
             return redirect(route('jobs.index'));
         }
 
-        $job->update(Request::all());
+        $data = Request::all();
+
+        $data['company_id'] = \Auth::user()->company()[0]->id;
+
+        $job->update($data);
 
         \Session::flash('success','Job updated successfully.');
 

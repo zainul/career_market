@@ -39,4 +39,14 @@ class User extends Authenticatable
     public function profiles() {
       return $this->hasOne('App\Models\Profile');
     }
+
+    public function company() {
+      $company = User::join('team_members', 'team_members.user_id', '=', 'users.id')
+                      ->join('companies', 'companies.id', '=', 'team_members.company_id')
+                      ->select('companies.*')
+                      ->where('users.id', $this->id)
+                      ->get();
+
+      return $company;
+    }
 }

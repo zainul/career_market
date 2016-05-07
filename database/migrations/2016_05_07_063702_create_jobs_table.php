@@ -69,6 +69,8 @@ class CreatejobsTable extends Migration
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
 
+            $table->integer('company_id');
+
             $table->string('keyword');
             $table->timestamps();
             $table->softDeletes();
