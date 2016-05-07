@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('applicants.show_fields')
+    <div class="section">
+      @include('applicants.show_fields')
+    </div>
 
     <div class="form-group">
-           <a href="{!! route('applicants.index') !!}" class="btn btn-default">Back</a>
+           <a href="{!! URL::previous(); !!}" class="btn btn-default">Back</a>
     </div>
 @endsection

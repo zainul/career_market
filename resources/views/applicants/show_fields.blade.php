@@ -1,19 +1,13 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $applicant->id !!}</p>
-</div>
-
 <!-- User Id Field -->
 <div class="form-group">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $applicant->user_id !!}</p>
+    {!! Form::label('user_id', 'User') !!}
+    <p>{!! $applicant->user->name !!}</p>
 </div>
 
 <!-- Job Id Field -->
 <div class="form-group">
-    {!! Form::label('job_id', 'Job Id:') !!}
-    <p>{!! $applicant->job_id !!}</p>
+    {!! Form::label('job_id', 'Job Applied') !!}
+    <p>{!! $applicant->job->name !!}</p>
 </div>
 
 <!-- Cover Letter Field -->
@@ -27,4 +21,3 @@
     {!! Form::label('reason', 'Reason:') !!}
     <p>{!! $applicant->reason !!}</p>
 </div>
-

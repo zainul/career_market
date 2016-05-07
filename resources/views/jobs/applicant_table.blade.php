@@ -13,7 +13,11 @@
       <tbody>
       @foreach($applicants as $applicant)
           <tr>
-              <td>{!! $applicant->user->name !!}</td>
+              <td>
+                <a href="/applicants/{!! $applicant->id !!}">
+                  {!! $applicant->user->name !!}
+                </a>
+              </td>
               <td>{!! $applicant->user->email !!}</td>
               <td>
                   <select class="form-control action-applicant" id="{!! $applicant->id !!}">
