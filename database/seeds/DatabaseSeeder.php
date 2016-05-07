@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder
       DB::statement("TRUNCATE TABLE categories CASCADE");
       DB::statement("TRUNCATE TABLE profiles");
       DB::statement("TRUNCATE TABLE currencies CASCADE");
+      DB::statement("TRUNCATE TABLE experience_levels CASCADE");
+      DB::statement("TRUNCATE TABLE functionals CASCADE");
+      DB::statement("TRUNCATE TABLE industries CASCADE");
+      DB::statement("TRUNCATE TABLE locations CASCADE");
       $this->call( 'RoleTableSeeder' );
       $this->call( 'CategoryTableSeeder' );
       $this->call( 'CurrencyTableSeeder' );

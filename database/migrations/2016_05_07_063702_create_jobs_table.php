@@ -36,11 +36,6 @@ class CreatejobsTable extends Migration
             $table->string('city');
             $table->string('zip_code');
 
-            $table->integer('type_id')->unsigned();
-            $table->foreign('type_id')->references('id')->on('types')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
-
             $table->text('brief_description');
 
             $table->integer('employment_type_id')->unsigned();
