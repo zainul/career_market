@@ -49,4 +49,12 @@ class User extends Authenticatable
 
       return $company;
     }
+
+    public function isTeamMember() {
+      if (count($this->company()) > 0){
+        return true;
+      }else{
+        return false;
+      }
+    }
 }

@@ -17,12 +17,18 @@
         <a href="/">
           <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
-        <a href="/jobs">
-          <i class="fa fa-plus"></i> <span>Jobs</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <a href="/questions">
-          <i class="fa fa-question"></i> <span>Question</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
+        @if(\Auth::user()->isTeamMember())
+          <a href="/jobs">
+            <i class="fa fa-plus"></i> <span>Jobs</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <a href="/questions">
+            <i class="fa fa-question"></i> <span>Question</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+        @else
+          <a href="/jobs">
+            <i class="fa fa-plus"></i> <span>Application</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+        @endif
       </li>
         <li class="treeview">
           <a href="{{ url('/logout') }}">
