@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
       Model::unguard();
+      DB::statement("TRUNCATE TABLE work_experiences");
+      DB::statement("TRUNCATE TABLE educational_backgrounds");
+      DB::statement("TRUNCATE TABLE users CASCADE");
       DB::statement("TRUNCATE TABLE answers");
       DB::statement("TRUNCATE TABLE questions CASCADE");
       DB::statement("TRUNCATE TABLE jobs CASCADE");
@@ -33,7 +36,9 @@ class DatabaseSeeder extends Seeder
       $this->call( 'IndustryTableSeeder' );
       $this->call( 'LocationTableSeeder' );
       factory('App\Models\Company', 10)->create();
-      factory('App\User', 1)->create();
+      factory('App\User', 20)->create();
+      factory('App\Models\Profile', 7)->create();
+      factory('App\Models\TeamMember', 7)->create();
       Model::reguard();
     }
 }

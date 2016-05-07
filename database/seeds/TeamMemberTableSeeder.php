@@ -1,28 +1,28 @@
 <?php
 // NewsTableSeeder.php
 use Illuminate\Database\Seeder;
-use App\Models\Currency as Currency; // to use Eloquent Model
+use App\Models\TeamMember as TeamMember; // to use Eloquent Model
 
-class CurrencyTableSeeder extends Seeder {
+class TeamMemberTableSeeder extends Seeder {
     public function run() {
 
-        Currency::create( [
+        TeamMember::create( [
             'name' => 'S$'
         ] );
 
-        Currency::create( [
+        TeamMember::create( [
             'name' => 'IDR' ,
         ] );
 
-        Currency::create( [
+        TeamMember::create( [
             'name' => 'USD$' ,
         ] );
 
-        Currency::create( [
+        TeamMember::create( [
             'name' => 'AUD$' ,
         ] );
 
-        Currency::create( [
+        TeamMember::create( [
             'name' => 'RM' ,
         ] );
     }
