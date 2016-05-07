@@ -5,7 +5,7 @@
     <center>
       <div style="width:60%;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control input-lg" placeholder="Find a dream job...">
+          <input type="text" id="query" class="form-control input-lg" placeholder="Find a dream job...">
               <span class="input-group-btn">
                 <button type="submit" name="Find job" id="search-btn" class="btn btn-flat btn-lg">
                   <i class="fa fa-search"></i>
@@ -15,6 +15,8 @@
       </div>
     </center>
     <br/><br/>
-    @include('_search')
+    <div class="result">
+      @include('_search')
+    </div>
 </div>
 @endsection

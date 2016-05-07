@@ -17,4 +17,14 @@ $(function() {
       }
     })
   })
+
+  $('#search-btn').click(function(){
+    $.ajax({
+      url:'/jobs?q=' + $('#query').val(),
+      method:'GET',
+      success: function(response) {
+        $('.result').html(response);
+      }
+    })
+  })
 });

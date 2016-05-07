@@ -22,6 +22,14 @@ class JobController extends AppBaseController
      */
     public function index(Request $request)
     {
+        if (Request::ajax()) {
+          $input = Request::all();
+          $jobs = Job::where('name', 'LIKE', '%'.$input['q'].'%')->get();
+          return view('_search')
+              ->with('jobs', $jobs)
+              ->render();
+        }
+
         $jobs = Job::all();
         return view('jobs.index')
             ->with('jobs', $jobs);
