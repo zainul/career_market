@@ -14,7 +14,7 @@ class Role extends Model
     use SoftDeletes;
 
     public $table = 'roles';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -40,4 +40,8 @@ class Role extends Model
     public static $rules = [
         'name' => 'required'
     ];
+
+    public function users() {
+      return $this->hasMany('App\User');
+    }
 }

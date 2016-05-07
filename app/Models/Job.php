@@ -14,7 +14,7 @@ class Job extends Model
     use SoftDeletes;
 
     public $table = 'jobs';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -76,4 +76,36 @@ class Job extends Model
     public static $rules = [
         'currency_id' => 'required'
     ];
+
+    public function currency() {
+      return $this->belongsTo('App\Models\Currency');
+    }
+
+    public function category() {
+      return $this->belongsTo('App\Models\Category');
+    }
+
+    public function location() {
+      return $this->belongsTo('App\Models\Location');
+    }
+
+    public function employment_type() {
+      return $this->belongsTo('App\Models\EmploymentType');
+    }
+
+    public function industry() {
+      return $this->belongsTo('App\Models\Industry');
+    }
+
+    public function experience_level() {
+      return $this->belongsTo('App\Models\ExperienceLevel');
+    }
+
+    public function functional() {
+      return $this->belongsTo('App\Models\Functional');
+    }
+
+    public function Education() {
+      return $this->belongsTo('App\Models\Education');
+    }
 }

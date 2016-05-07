@@ -14,7 +14,7 @@ class WorkExperience extends Model
     use SoftDeletes;
 
     public $table = 'work_experiences';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -53,4 +53,8 @@ class WorkExperience extends Model
     public static $rules = [
         'company_name' => 'required'
     ];
+
+    public function user() {
+      return $this->belongsTo('App\User');
+    }
 }

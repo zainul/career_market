@@ -14,7 +14,7 @@ class EducationalBackground extends Model
     use SoftDeletes;
 
     public $table = 'educational_backgrounds';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -48,4 +48,12 @@ class EducationalBackground extends Model
     public static $rules = [
         'school' => 'required'
     ];
+
+    public function user() {
+      return $this->belongsTo('App\User');
+    }
+
+    public function education() {
+      return $this->belongsTo('App\Models\Education');
+    }
 }

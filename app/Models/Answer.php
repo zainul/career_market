@@ -14,7 +14,7 @@ class Answer extends Model
     use SoftDeletes;
 
     public $table = 'answers';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -46,4 +46,12 @@ class Answer extends Model
         'question_id' => 'required',
         'answer' => 'required'
     ];
+
+    public function applicant() {
+      return $this->belongsTo('App\Models\Applicant');
+    }
+
+    public function question() {
+      return $this->belongsTo('App\Models\Question');
+    }
 }

@@ -14,7 +14,7 @@ class Applicant extends Model
     use SoftDeletes;
 
     public $table = 'applicants';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -49,4 +49,12 @@ class Applicant extends Model
         'cover_letter' => 'required',
         'reason' => 'required'
     ];
+
+    public function user() {
+      return $this->belongsTo('App\User');
+    }
+
+    public function job() {
+      return $this->belongsTo('App\Models\Job');
+    }
 }

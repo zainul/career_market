@@ -14,7 +14,7 @@ class Profile extends Model
     use SoftDeletes;
 
     public $table = 'profiles';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -54,4 +54,12 @@ class Profile extends Model
     public static $rules = [
         'linkedin' => 'required'
     ];
+
+    public function user() {
+      return $this->belongsTo('App\User');
+    }
+
+    public function currency() {
+      return $this->belongsTo('App\Models\Currency');
+    }
 }
