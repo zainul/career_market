@@ -48,14 +48,14 @@ class CreatejobsTable extends Migration
             $table->foreign('experience_level_id')->references('id')->on('experience_levels');
 
             $table->integer('min_salary');
-            $table->integer('max_salary');
+            $table->integer('max_salary')->nullable();
 
             $table->integer('functional_id')->unsigned();
             $table->foreign('functional_id')->references('id')->on('functionals');
 
             $table->integer('education_id')->unsigned();
             $table->foreign('education_id')->references('id')->on('educations');
-            
+
             $table->string('keyword');
             $table->timestamps();
             $table->softDeletes();
