@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateWorkExperiencesTable extends Migration
+class CreateEducationalBackgroundsTable extends Migration
 {
 
     /**
@@ -13,17 +13,16 @@ class CreateWorkExperiencesTable extends Migration
      */
     public function up()
     {
-        Schema::create('work_experiences', function (Blueprint $table) {
+        Schema::create('educational_backgrounds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('company_name', 30);
-            $table->string('position');
+            $table->string('school');
+            $table->string('field_study');
             $table->datetime('start');
-            $table->datetime('end')->nullable();
-            $table->boolean('still_working')->nullable();
-            $table->string('location');
-            $table->text('description');
+            $table->datetime('end');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('education_id')->unsigned();
+            $table->foreign('education_id')->references('id')->on('educations');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -36,6 +35,6 @@ class CreateWorkExperiencesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('work_experiences');
+        Schema::drop('educational_backgrounds');
     }
 }
