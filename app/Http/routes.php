@@ -29,5 +29,6 @@ Route::group(['middleware' => ['web'] ], function () {
   Route::get('/home', 'HomeController@index');
   Route::resource('questions', 'QuestionController');
   Route::get('/jobs/{id}/applicant/create', 'ApplicantController@create');
+  Route::get('/jobs/{id}/applicants', 'JobController@applicants');
   Route::resource('applicants', 'ApplicantController');
 });

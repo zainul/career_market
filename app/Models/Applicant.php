@@ -23,7 +23,8 @@ class Applicant extends Model
         'user_id',
         'job_id',
         'cover_letter',
-        'reason'
+        'reason',
+        'status'
     ];
 
     /**

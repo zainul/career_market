@@ -7,7 +7,6 @@
         <th>Employment Type</th>
         <th>Functional</th>
         <th>Education</th>
-        <th>Keyword</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -20,12 +19,12 @@
             <td>{!! $job->employment_type->name !!}</td>
             <td>{!! $job->functional->name !!}</td>
             <td>{!! $job->education->name !!}</td>
-            <td>{!! $job->keyword !!}</td>
             <td>
                 {!! Form::open(['route' => ['jobs.destroy', $job->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('jobs.show', [$job->id]) !!}" class='btn btn-success btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="{!! route('jobs.edit', [$job->id]) !!}" class='btn btn-warning btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                    <a href="/jobs/{!! $job->id !!}/applicants" class='btn btn-primary btn-xs'><i class="glyphicon glyphicon-list"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                 </div>
                 {!! Form::close() !!}

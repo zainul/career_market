@@ -127,4 +127,8 @@ class Job extends Model
     public function company() {
       return $this->belongsTo('App\Models\Company');
     }
+
+    public function applicants() {
+      return $this->hasMany('App\Models\Applicant');
+    }
 }

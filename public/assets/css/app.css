@@ -188,3 +188,28 @@ img.banner {
     margin-top: 0;
   }
 }
+
+@media screen and (max-width: 480px) {
+    .nav {
+        padding-left:2px;
+        padding-right:2px;
+    }
+    .nav li {
+        display:block !important;
+        width:100%;
+        margin:0px;
+    }
+    .nav li.active {
+        border-bottom:1px solid #ddd!important;
+        margin: 0px;
+    }
+}
+.tab-content{
+  padding-top:10px;
+}
+
+@media screen and (max-width: 767px) {
+  div.dataTables_wrapper > div.row > div, div.dataTables_length, div.dataTables_filter, div.dataTables_info, div.dataTables_paginate {
+    text-align: center;
+    margin-top: 10px;
+}

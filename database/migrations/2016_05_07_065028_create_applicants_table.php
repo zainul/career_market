@@ -19,6 +19,7 @@ class CreateapplicantsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('job_id')->unsigned();
             $table->foreign('job_id')->references('id')->on('jobs');
+            $table->string('status')->nullable();
             $table->text('cover_letter');
             $table->text('reason');
             $table->timestamps();

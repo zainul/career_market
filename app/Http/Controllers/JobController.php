@@ -28,6 +28,19 @@ class JobController extends AppBaseController
     }
 
     /**
+     * Display a listing of the Job with Applicant.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function applicants($id = null)
+    {
+        $jobs = Job::where('id', $id)->with('applicants')->first();
+        return view('jobs.applicants')
+            ->with('applicants', $jobs->applicants);
+    }
+
+    /**
      * Show the form for creating a new Job.
      *
      * @return Response

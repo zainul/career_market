@@ -24,8 +24,11 @@
           <a href="/questions">
             <i class="fa fa-question"></i> <span>Question</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
+          <a href="/employer/applicants">
+            <i class="fa fa-list"></i> <span>Applications</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
         @else
-          <a href="/jobs">
+          <a href="/applicants">
             <i class="fa fa-plus"></i> <span>Application</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
         @endif
