@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table class="table table-responsive applicants-table">
     <thead class="bg-primary">
       <tr>
@@ -28,3 +29,4 @@
     @endforeach
     </tbody>
 </table>
+</div>

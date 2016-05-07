@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table class="table jobs-table">
     <thead class="bg-primary">
       <tr>
@@ -33,3 +34,4 @@
     @endforeach
     </tbody>
 </table>
+</div>

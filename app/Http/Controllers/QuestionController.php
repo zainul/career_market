@@ -104,7 +104,7 @@ class QuestionController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateQuestionRequest $request)
+    public function update($id)
     {
         $question = Question::find($id);
 
@@ -114,7 +114,7 @@ class QuestionController extends AppBaseController
             return redirect(route('questions.index'));
         }
 
-        $question = Question::update(Request::all());
+        $question->update(Request::all());
 
         \Session::flash('success','Question updated successfully.');
 
