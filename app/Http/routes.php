@@ -30,5 +30,8 @@ Route::group(['middleware' => ['web'] ], function () {
   Route::resource('questions', 'QuestionController');
   Route::get('/jobs/{id}/applicant/create', 'ApplicantController@create');
   Route::get('/jobs/{id}/applicants', 'JobController@applicants');
+  Route::get('/applicants/{id}/answer', 'ApplicantController@answer');
   Route::resource('applicants', 'ApplicantController');
+  Route::post('applicants/answer',
+  ['as' => 'applicants.answered', 'uses' => 'ApplicantController@answered']);
 });

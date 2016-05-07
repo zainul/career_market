@@ -131,4 +131,8 @@ class Job extends Model
     public function applicants() {
       return $this->hasMany('App\Models\Applicant');
     }
+
+    public function questions() {
+      return $this->hasMany('App\Models\Question');
+    }
 }

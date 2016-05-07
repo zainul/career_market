@@ -58,4 +58,8 @@ class Applicant extends Model
     public function job() {
       return $this->belongsTo('App\Models\Job');
     }
+
+    public function answer() {
+      return $this->hasMany('App\Models\Answer');
+    }
 }

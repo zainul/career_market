@@ -22,6 +22,23 @@
     <p>{!! $applicant->reason !!}</p>
 </div>
 
+<h3>Answer for Question</h3>
+
+<table class="table">
+  @foreach($applicant->answer as $key => $value)
+    <tr>
+      <td>
+        Q: {!! $value->question->description !!}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        A: {!! $value->answer !!}
+      </td>
+    </tr>
+  @endforeach
+</table>
+
 <h3>Educational Background</h3>
 <hr/>
 @foreach($applicant->user->educational_backgrounds as $key => $value)

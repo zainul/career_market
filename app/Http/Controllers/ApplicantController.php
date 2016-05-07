@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Request;
 use App\Models\Applicant;
+use App\Models\Answer;
 use Response;
 
 class ApplicantController extends AppBaseController
@@ -37,6 +38,37 @@ class ApplicantController extends AppBaseController
     {
         return view('applicants.create')
                 ->with('job_id', $job_id);
+    }
+
+
+    /**
+     * Show the form for creating a new Applicant.
+     *
+     * @return Response
+     */
+    public function answer($id = null)
+    {
+        $applicant = Applicant::find($id);
+        return view('applicants.answer')
+                ->with('applicant', $applicant);
+    }
+
+    /**
+     * Store a newly created Answer in storage.
+     *
+     * @return Response
+     */
+    public function answered()
+    {
+        $data = Request::all();
+
+        $data['user_id'] = \Auth::user()->id;
+
+        Answer::create($data);
+
+        \Session::flash('success','Applicant saved successfully.');
+
+        return redirect()->back();
     }
 
     /**
