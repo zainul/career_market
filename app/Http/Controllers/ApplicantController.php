@@ -51,7 +51,7 @@ class ApplicantController extends AppBaseController
         $data = Request::all();
 
         $data['status'] = 'new';
-        
+
         $data['user_id'] = \Auth::user()->id;
 
         $applicant =  Applicant::create($data);
@@ -124,6 +124,10 @@ class ApplicantController extends AppBaseController
         $data['user_id'] = \Auth::user()->id;
 
         $applicant->update(Request::all());
+
+        if( Request::ajax() ){
+          return response()->json(['status' => 'ok']);
+        }
 
         \Session::flash('success','Applicant updated successfully.');
 
