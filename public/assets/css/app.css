@@ -4,7 +4,7 @@
 
 .content-wrapper {
     min-height: 100%;
-    background: url(../../assets/img/bg.png);
+    background-color: #F9F9F9;
     z-index: 800;
 }
 .main-footer {
@@ -35,8 +35,6 @@
 }
 .container {
   border-radius: 5px;
-  background: #F0FFFC;
-  border: solid 1px #E2E2E2;
 }
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {

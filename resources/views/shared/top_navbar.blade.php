@@ -1,12 +1,11 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="../../index2.html" class="logo">
+  <a href="/" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini">S<b>D</b>T</span>
+    <span class="logo-mini">C<b>M</b>E</span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg">
-      <img src="/assets/img/Logo-PLN-min.jpg" width="25" height="35"/>
-      <b>SIDATO</b>
+      <b>Careerment Exam</b>
     </span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
@@ -18,9 +17,6 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="title-top">
-        SISTEM INFORMASI DATA TOWER ONLINE
-  PT PLN PERSERO TJBTB
-  AREA PELAKSANA PEMELIHARAAN PROBOLINGGO
       </span>
     </a>
     @include('shared.sidebar')
