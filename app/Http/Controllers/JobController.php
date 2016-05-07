@@ -10,6 +10,11 @@ use Response;
 
 class JobController extends AppBaseController
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the Job.
      *

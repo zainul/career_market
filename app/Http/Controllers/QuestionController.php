@@ -9,6 +9,10 @@ use Response;
 
 class QuestionController extends AppBaseController
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the Question.
      *

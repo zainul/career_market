@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::get('/', 'HomeController@welcome');
 
 Route::group(['prefix' => 'auth','middleware' => 'web'], function () {
    Route::get('login', 'Auth\AuthController@getLogin');
@@ -21,11 +21,8 @@ Route::group(['prefix' => 'auth','middleware' => 'web'], function () {
    Route::post('register', 'Auth\AuthController@postRegister');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::group(['middleware' => ['web','auth'] ], function () {
+Route::group(['middleware' => ['web'] ], function () {
   Route::auth();
 
   Route::resource('jobs', 'JobController');
