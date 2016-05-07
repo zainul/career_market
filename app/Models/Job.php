@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Watson\Validating\ValidatingTrait;
 
 /**
  * Class Job
@@ -13,11 +14,11 @@ class Job extends Model
 {
     use SoftDeletes;
 
+    use ValidatingTrait;
+
     public $table = 'jobs';
 
-
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'currency_id',
@@ -72,8 +73,23 @@ class Job extends Model
      *
      * @var array
      */
-    public static $rules = [
-        'currency_id' => 'required'
+    protected $rules = [
+        'currency_id' => 'required',
+        'category_id' => 'required',
+        'name' => 'required',
+        'location_id' => 'required',
+        'state' => 'required',
+        'city' => 'required',
+        'zip_code' => 'required',
+        'brief_description' => 'required',
+        'employment_type_id' => 'required',
+        'job_requirement' => 'required',
+        'benefit' => 'required',
+        'industry_id' => 'required',
+        'experience_level_id' => 'required',
+        'functional_id' => 'required',
+        'education_id' => 'required',
+        'keyword' => 'required'
     ];
 
     public function currency() {
