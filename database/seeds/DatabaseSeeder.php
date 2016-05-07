@@ -39,6 +39,8 @@ class DatabaseSeeder extends Seeder
       factory('App\User', 20)->create();
       factory('App\Models\Profile', 7)->create();
       factory('App\Models\TeamMember', 7)->create();
+      factory('App\Models\EducationalBackground', 60)->create();
+      factory('App\Models\WorkExperience', 60)->create();
       Model::reguard();
     }
 }
