@@ -1,0 +1,58 @@
+.single-video{
+  background-color: #ECECEC;
+}
+
+.blur-image{
+  z-index: -1;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+img.small {
+  width: 120px;
+  height: 90px;
+}
+
+img.center {
+  margin-top : 25px;
+}
+
+.div-list-club .col-md-3:nth-child(5){
+  clear: both;
+}
+
+.thumbnail-wrap{
+  height: 148px;
+  position: relative;
+}
+
+.thumbnail-wrap img.center{
+  margin: 0;
+}
+@media (max-width: 768px){
+  .thumbnail-wrap{
+    height: auto;
+  }
+
+  .video-item{
+    /*padding: 0;*/
+  }
+}  
+
+@media (max-width: 640px){
+  .div-list-club .col-md-3:nth-child(3),
+  .div-list-club .col-md-3:nth-child(6){
+    clear: both;
+  }
+
+  .div-list-club .col-md-3:nth-child(5){
+    clear: inherit;
+  }
+
+  #SearchOrderBy{
+    margin: 10px 0; 
+  }
+}

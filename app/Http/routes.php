@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix' => 'auth','middleware' => 'web'], function () {
+   Route::get('login', 'Auth\AuthController@getLogin');
+   Route::post('login', 'Auth\AuthController@postLogin');
+   Route::get('logout', 'Auth\AuthController@getLogout');
+   Route::get('register', 'Auth\AuthController@getRegister');
+   Route::post('register', 'Auth\AuthController@postRegister');
+});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
