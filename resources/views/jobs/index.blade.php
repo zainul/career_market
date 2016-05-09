@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-        <h1 class="pull-left">Jobs</h1>
-        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('jobs.create') !!}">Add New</a>
+        <center>
+          <h1>Jobs</h1>
+        </center>
+        <div>
+          <a class="btn btn-primary pull-left" style="margin-top: 20px" href="{!! route('jobs.create') !!}">Add New</a>
+        </div>
 
         <div class="clearfix"></div>
 
         <div class="clearfix"></div>
-
+        <br/>
         <div class="section">
           @include('jobs.table')
         </div>
