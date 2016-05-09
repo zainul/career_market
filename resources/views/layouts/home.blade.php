@@ -8,6 +8,9 @@
     <div class="container">
       <div class="pull-right" style="margin-top:5px;">
         <a href="/auth/login" class="btn btn-default">Login</a>
+        @if(\Auth::user())
+          <a href="/home" class="btn btn-default">Profile</a>
+        @endif
       </div>
     </div>
   </nav>
